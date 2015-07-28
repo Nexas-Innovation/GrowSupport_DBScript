@@ -1,8 +1,10 @@
 CREATE TABLE [dbo].[M_HyoshoKbn] (
     [HyoshoKbnCd]    CHAR (2)      NOT NULL,
     [Meisho]         NVARCHAR (20) NOT NULL,
+    [SosetsuNendo]   CHAR (4)      NOT NULL,
+    [HaishiNendo]    CHAR (4)      NULL,
     [DisplayOrder]   INT           NOT NULL,
-    [DelFlg]         CHAR (1)      NOT NULL DEFAULT 0,
+    [DelFlg]         CHAR (1)      DEFAULT ((0)) NOT NULL,
     [CrtKojinCd]     CHAR (4)      NOT NULL,
     [CrtDt]          DATETIME2 (7) NOT NULL,
     [CrtPlgId]       VARCHAR (10)  NOT NULL,

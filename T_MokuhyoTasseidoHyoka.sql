@@ -1,5 +1,5 @@
-CREATE TABLE [dbo].[T_MokuhyoTasseiHyoka] (
-    [ShainCd]            CHAR (4)        NOT NULL,
+CREATE TABLE [dbo].[T_MokuhyoTasseidoHyoka] (
+    [ShainCd]            CHAR (3)        NOT NULL,
     [HyokaNendo]         CHAR (4)        NOT NULL,
     [HyokaGroupCd]       CHAR (3)        NOT NULL,
     [Mokuhyo1SbtCd]      CHAR (3)        NULL,
@@ -17,16 +17,16 @@ CREATE TABLE [dbo].[T_MokuhyoTasseiHyoka] (
     [FurikaeriTry]       NVARCHAR (400)  NULL,
     [SoHyo]              NVARCHAR (1000) NULL,
     [DisplayOrder]       CHAR (4)        NULL,
-    [Hyokasha1Cd]        CHAR (4)        NULL,
+    [Hyokasha1Cd]        CHAR (3)        NULL,
     [Hyokasha1Comment]   NVARCHAR (1000) NULL,
-    [Hyokasha2Cd]        CHAR (4)        NULL,
+    [Hyokasha2Cd]        CHAR (3)        NULL,
     [Hyokasha2Comment]   NVARCHAR (1000) NULL,
     [DelFlg]             CHAR (1)        NOT NULL DEFAULT 0,
-    [CrtKojinCd]         CHAR (4)        NOT NULL,
+    [CrtShainCd]         CHAR (3)        NOT NULL,
     [CrtDt]              DATETIME2 (7)   NOT NULL,
     [CrtPlgId]           VARCHAR (10)    NOT NULL,
-    [LastUpdKojinCd]     CHAR (4)        NOT NULL,
-    [LastUpdKojinDt]     DATETIME2 (7)   NOT NULL,
+    [LastUpdShainCd]     CHAR (3)        NOT NULL,
+    [LastUpdDt]          DATETIME2 (7)   NOT NULL,
     [LastUpdPlgId]       VARCHAR (10)    NOT NULL,
     [RowVersion]         ROWVERSION      NOT NULL,
     CONSTRAINT [PK_T_MokuhyoTasseiHyoka] PRIMARY KEY CLUSTERED ([ShainCd] ASC, [HyokaNendo] ASC),
@@ -37,6 +37,6 @@ CREATE TABLE [dbo].[T_MokuhyoTasseiHyoka] (
     CONSTRAINT [FK_MokuhyoTasseiHyoka_M_MokuhyoSbt_5] FOREIGN KEY ([Mokuhyo3SbtCd]) REFERENCES [dbo].[M_MokuhyoSbt] ([MokuhyoSbtCd]),
     CONSTRAINT [FK_MokuhyoTasseiHyoka_M_MokuhyoSbt_6] FOREIGN KEY ([Mokuhyo4SbtCd]) REFERENCES [dbo].[M_MokuhyoSbt] ([MokuhyoSbtCd]),
     CONSTRAINT [FK_MokuhyoTasseiHyoka_M_MokuhyoSbt_7] FOREIGN KEY ([Mokuhyo5SbtCd]) REFERENCES [dbo].[M_MokuhyoSbt] ([MokuhyoSbtCd]),
-    CONSTRAINT [FK_T_MokuhyoTasseiHyoka_M_Shain_8] FOREIGN KEY ([Hyokasha2Cd]) REFERENCES [dbo].[M_Shain] ([ShainCd]),
+    CONSTRAINT [FK_T_MokuhyoTasseiHyoka_M_Shain_8] FOREIGN KEY ([Hyokasha1Cd]) REFERENCES [dbo].[M_Shain] ([ShainCd]),
     CONSTRAINT [FK_T_MokuhyoTasseiHyoka_M_Shain_9] FOREIGN KEY ([Hyokasha2Cd]) REFERENCES [dbo].[M_Shain] ([ShainCd])
 );

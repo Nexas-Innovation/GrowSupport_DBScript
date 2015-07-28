@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[T_SosaRireki] (
     [SeqNo]     BIGINT        NOT NULL,
-    [ShainCd]   CHAR (4)      NOT NULL,
+    [ShainCd]   CHAR (3)      NOT NULL,
     [LoginDt]   DATETIME2 (7) NOT NULL,
     [LoginIP]   VARCHAR (40)  NOT NULL,
     [SosaKbnCd] CHAR (2)      NOT NULL,

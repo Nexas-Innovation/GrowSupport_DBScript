@@ -1,8 +1,8 @@
 CREATE TABLE [dbo].[M_SystemAuthKbn] (
     [SystemAuthKbnCd] CHAR (1)      NOT NULL,
     [Meisho]          NVARCHAR (10) NOT NULL,
-    [DisplayOrder]    INT           NOT NULL,
-    [DelFlg]          CHAR (1)      NOT NULL DEFAULT 0,
+    [DisplayOrder]    INT           NULL,
+    [DelFlg]          CHAR (1)      DEFAULT ((0)) NOT NULL,
     [CrtShainCd]      CHAR (3)      NOT NULL,
     [CrtDt]           DATETIME2 (7) NOT NULL,
     [CrtPlgId]        VARCHAR (10)  NOT NULL,
